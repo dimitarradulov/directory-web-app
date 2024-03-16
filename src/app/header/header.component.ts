@@ -4,10 +4,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent { }
+export class HeaderComponent {}
