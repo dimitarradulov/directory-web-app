@@ -4,6 +4,11 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
+    fontFamily:{
+      'sans': ['Inter', 'sans-serif'],
+      'serif': ['Lora', 'serif'],
+      'mono': ['Inconsolata', 'monospace']
+    },
     extend: {
       colors: {
         'primary': '#050505',
