@@ -20,6 +20,13 @@ module.exports = {
         'secondary-96': '#F4F4F4',
         'accent': '#A445ED',
         'error': 'FF5252'
+      },
+      fontSize: {
+        'heading-l': ['64px', '77px'],
+        'heading-m':  ['24px', '29px'],
+        'heading-s':  ['20px', '24px'],
+        'body-m': ['18px', '24px'],
+        'body-s': ['14px', '17px'],
       }
     },
   },
