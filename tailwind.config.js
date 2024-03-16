@@ -14,6 +14,10 @@ module.exports = {
       'mono': ['Inconsolata', 'monospace']
     },
     extend: {
+      boxShadow: {
+        'main': '0px 5px 30px 0px rgba(0,0,0,0.1)',
+        'main-dark': '0px 5px 20px 0px rgba(164,69,237,0.1)'
+      },
       colors: {
         'primary': '#050505',
         'primary-12': '#1F1F1F',
