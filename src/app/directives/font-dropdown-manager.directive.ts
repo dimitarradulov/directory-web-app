@@ -1,4 +1,4 @@
-import { Directive, WritableSignal, signal } from '@angular/core';
+import { Directive, WritableSignal, computed, signal } from '@angular/core';
 
 @Directive({
   selector: '[appFontDropdownManager]',
@@ -6,4 +6,5 @@ import { Directive, WritableSignal, signal } from '@angular/core';
 })
 export class FontDropdownManagerDirective {
   private isShowingSignal: WritableSignal<boolean> = signal(false);
+  isShowing = computed(() => this.isShowingSignal());
 }
