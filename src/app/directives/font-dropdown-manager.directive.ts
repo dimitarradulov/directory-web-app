@@ -11,6 +11,7 @@ import {
 @Directive({
   selector: '[appFontDropdownManager]',
   standalone: true,
+  exportAs: 'appFontDropdownManager',
 })
 export class FontDropdownManagerDirective {
   private elementRef: ElementRef<HTMLElement> = inject(ElementRef);
@@ -29,5 +30,9 @@ export class FontDropdownManagerDirective {
 
   toggleDropdown(): void {
     this.isShowingSignal.update((isShowing) => !isShowing);
+  }
+
+  hideDropdown(): void {
+    this.isShowingSignal.set(false);
   }
 }
