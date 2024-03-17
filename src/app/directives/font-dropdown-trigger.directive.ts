@@ -7,4 +7,9 @@ import { FontDropdownManagerDirective } from './font-dropdown-manager.directive'
 })
 export class FontDropdownTriggerDirective {
   private dropdownManager = inject(FontDropdownManagerDirective);
+
+  @HostListener('click')
+  onClick(): void {
+    this.dropdownManager.toggleDropdown();
+  }
 }
