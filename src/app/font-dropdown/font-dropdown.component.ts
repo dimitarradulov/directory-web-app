@@ -12,12 +12,6 @@ import { FontDropdownManagerDirective } from '../directives/font-dropdown-manage
 import { FontDropdownMenuDirective } from '../directives/font-dropdown-menu.directive';
 import { FontDropdownTriggerDirective } from '../directives/font-dropdown-trigger.directive';
 
-const fontsAsString = Object.freeze({
-  [Font.SANS]: 'Sans Serif',
-  [Font.SERIF]: 'Serif',
-  [Font.MONO]: 'Mono',
-});
-
 @Component({
   selector: 'app-font-dropdown',
   standalone: true,
@@ -32,5 +26,11 @@ const fontsAsString = Object.freeze({
 })
 export class FontDropdownComponent {
   private fontService = inject(FontService);
-  chosenFont = computed(() => fontsAsString[this.fontService.font()]);
+  chosenFont = computed(() => this.fontsAsString[this.fontService.font()]);
+
+  protected readonly fontsAsString = {
+    [Font.SANS]: 'Sans Serif',
+    [Font.SERIF]: 'Serif',
+    [Font.MONO]: 'Mono',
+  };
 }
