@@ -1,4 +1,8 @@
-<div class="relative" appFontDropdownManager>
+<div
+  class="relative"
+  appFontDropdownManager
+  #dropdownManager="appFontDropdownManager"
+>
   <button class="font-bold flex items-center gap-4" appFontDropdownTrigger>
     <span>{{ chosenFont() }}</span>
     <img src="../../assets/images/icon-arrow-down.svg" alt="arrow down" />
@@ -12,7 +16,7 @@
       <button
         class="hover:text-accent"
         [ngClass]="'font-' + font.key"
-        (click)="changeFont($any(font.key))"
+        (click)="changeFont($any(font.key)); dropdownManager.hideDropdown()"
       >
         {{ font.value }}
       </button>
