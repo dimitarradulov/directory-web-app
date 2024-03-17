@@ -8,8 +8,10 @@
     class="flex flex-col items-start gap-4 absolute right-0 top-10 p-6 w-44 h-36 rounded-2xl font-bold shadow-main"
     *appFontDropdownMenu
   >
-    <button class="font-sans hover:text-accent">Sans Serif</button>
-    <button class="font-serif hover:text-accent">Serif</button>
-    <button class="font-mono hover:text-accent">Mono</button>
+    @for (font of fontsAsString | keyvalue; track $index) {
+      <button class="hover:text-accent" [ngClass]="'font-' + font.key">
+        {{ font.value }}
+      </button>
+    }
   </div>
 </div>
