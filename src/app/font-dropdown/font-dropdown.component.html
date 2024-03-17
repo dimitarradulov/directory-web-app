@@ -1,18 +1,15 @@
 <div
-  class="relative"
+  class="relative text-body-s sm:text-body-m"
   appFontDropdownManager
   #dropdownManager="appFontDropdownManager"
 >
-  <button
-    class="font-bold text-body-s flex items-center gap-4"
-    appFontDropdownTrigger
-  >
+  <button class="font-bold flex items-center gap-4" appFontDropdownTrigger>
     <span>{{ chosenFont() }}</span>
     <img src="../../assets/images/icon-arrow-down.svg" alt="arrow down" />
   </button>
 
   <div
-    class="flex flex-col items-start gap-4 absolute right-0 top-10 p-6 w-44 h-36 rounded-2xl font-bold shadow-main bg-white z-10"
+    class="flex flex-col items-start justify-between absolute right-0 top-10 p-6 w-44 h-36 rounded-2xl font-bold shadow-main bg-white z-10"
     *appFontDropdownMenu
   >
     @for (font of fontsAsString | keyvalue; track $index) {
