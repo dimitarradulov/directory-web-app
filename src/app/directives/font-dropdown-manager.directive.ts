@@ -21,8 +21,8 @@ export class FontDropdownManagerDirective {
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: PointerEvent) {
     const nativeElement: any = this.elementRef.nativeElement;
-    const clickedInside: boolean = nativeElement.contains(event.target);
-    if (!clickedInside) {
+    const clickedOutside: boolean = !nativeElement.contains(event.target);
+    if (clickedOutside) {
       this.isShowingSignal.set(false);
     }
   }
