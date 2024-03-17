@@ -26,4 +26,8 @@ export class FontDropdownManagerDirective {
       this.isShowingSignal.set(false);
     }
   }
+
+  toggleDropdown(): void {
+    this.isShowingSignal.update((isShowing) => !isShowing);
+  }
 }
