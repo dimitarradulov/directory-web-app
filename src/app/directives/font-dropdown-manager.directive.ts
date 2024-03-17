@@ -5,5 +5,5 @@ import { Directive, WritableSignal, signal } from '@angular/core';
   standalone: true,
 })
 export class FontDropdownManagerDirective {
-  private isShowing: WritableSignal<boolean> = signal(false);
+  private isShowingSignal: WritableSignal<boolean> = signal(false);
 }
