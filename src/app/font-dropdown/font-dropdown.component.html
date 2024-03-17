@@ -9,7 +9,11 @@
     *appFontDropdownMenu
   >
     @for (font of fontsAsString | keyvalue; track $index) {
-      <button class="hover:text-accent" [ngClass]="'font-' + font.key">
+      <button
+        class="hover:text-accent"
+        [ngClass]="'font-' + font.key"
+        (click)="changeFont($any(font.key))"
+      >
         {{ font.value }}
       </button>
     }

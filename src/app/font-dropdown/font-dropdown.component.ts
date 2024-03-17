@@ -33,4 +33,8 @@ export class FontDropdownComponent {
     [Font.SERIF]: 'Serif',
     [Font.MONO]: 'Mono',
   };
+
+  changeFont(font: Font): void {
+    this.fontService.setFont(font);
+  }
 }
