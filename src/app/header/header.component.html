@@ -4,7 +4,16 @@
     <app-font-dropdown />
     <div class="w-[1px] bg-secondary-91">&#8203;</div>
     <article class="flex gap-3">
-      <input type="checkbox" id="theme-toggle" />
+      <label class="relative inline-block w-10 h-5">
+        <input
+          type="checkbox"
+          class="opacity-0 w-0 [&+span]:checked:bg-accent [&+span:before]:checked:translate-x-5 [&+span:before]:checked:rounded-[50%] [&+span:before]:checked:border-t-transparent [&+span:before]:checked:border-l-transparent [&+span:before]:checked:border-r-transparent"
+        />
+        <span
+          class="absolute top-0 left-0 right-0 bottom-0 bg-secondary transition-all duration-500 rounded-[10px] before:absolute before:content-[''] before:w-[14px] before:h-[14px] before:left-1 before:bottom-[3.5px] before:bg-white before:transition-all before:duration-500 before:rounded-[50%] before:text-center before:leading-4"
+        ></span>
+      </label>
+
       <img src="../../assets/images/icon-moon.svg" alt="moon icon" />
     </article>
   </div>
