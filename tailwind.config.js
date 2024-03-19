@@ -8,11 +8,11 @@ module.exports = {
       center: true,
       padding: '1.5rem',
     },
-    fontFamily:{
-      'sans': ['Inter', 'sans-serif'],
-      'serif': ['Lora', 'serif'],
-      'mono': ['Inconsolata', 'monospace']
-    },
+    // fontFamily:{
+    //   'sans': ['Inter', 'sans-serif'],
+    //   'serif': ['Lora', 'serif'],
+    //   'mono': ['Inconsolata', 'monospace']
+    // },
     extend: {
       boxShadow: {
         'main': '0px 5px 30px 0px rgba(0,0,0,0.1)',
