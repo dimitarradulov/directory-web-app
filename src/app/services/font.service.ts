@@ -15,6 +15,7 @@ export class FontService {
 
   setFont(font: Font): void {
     this.currentFont.set(font);
+    this.saveFontToLocalStorage();
   }
 
   private getFont(): Font {
@@ -25,5 +26,9 @@ export class FontService {
     }
 
     return Font.SANS;
+  }
+
+  private saveFontToLocalStorage() {
+    localStorage.setItem('font', this.currentFont());
   }
 }
