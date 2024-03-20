@@ -9,7 +9,21 @@ export class FontService {
   private currentFont: WritableSignal<Font> = signal(Font.SANS);
   font = computed(() => this.currentFont());
 
+  constructor() {
+    this.currentFont.set(this.getFont());
+  }
+
   setFont(font: Font): void {
     this.currentFont.set(font);
+  }
+
+  private getFont(): Font {
+    const font = localStorage.getItem('font');
+
+    if (font) {
+      return font as Font;
+    }
+
+    return Font.SANS;
   }
 }
