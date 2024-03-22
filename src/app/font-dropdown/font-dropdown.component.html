@@ -8,18 +8,19 @@
     <img src="../../assets/images/icon-arrow-down.svg" alt="arrow down" />
   </button>
 
-  <div
-    class="flex flex-col items-start justify-between absolute right-0 top-10 p-6 w-44 h-36 rounded-2xl font-bold shadow-main dark:shadow-main-dark bg-white dark:bg-primary-12 z-10"
-    *appFontDropdownMenu
-  >
-    @for (font of fontsAsString | keyvalue; track font.key) {
-      <button
-        class="hover:text-accent"
-        [ngClass]="'font-' + font.key"
-        (click)="changeFont($any(font.key)); dropdownManager.hideDropdown()"
-      >
-        {{ font.value }}
-      </button>
-    }
-  </div>
+  @if (dropdownManager.isShowing()) {
+    <div
+      class="flex flex-col items-start justify-between absolute right-0 top-10 p-6 w-44 h-36 rounded-2xl font-bold shadow-main dark:shadow-main-dark bg-white dark:bg-primary-12 z-10"
+    >
+      @for (font of fontsAsString | keyvalue; track font.key) {
+        <button
+          class="hover:text-accent"
+          [ngClass]="'font-' + font.key"
+          (click)="changeFont($any(font.key)); dropdownManager.hideDropdown()"
+        >
+          {{ font.value }}
+        </button>
+      }
+    </div>
+  }
 </div>
