@@ -1,7 +1,8 @@
 <div class="container" [ngClass]="'font-' + fontService.font()">
   <app-header />
 
-  <main class="mt-6">
+  <main class="mt-6 grid gap-6 md:gap-12">
     <app-dictionary-search />
+    <app-dictionary-word-info />
   </main>
 </div>
