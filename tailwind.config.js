@@ -8,6 +8,11 @@ module.exports = {
     container: {
       center: true,
       padding: '1.5rem',
+      screens: {
+        'sm': '640px',
+        'md': '640px',
+        'lg': '800px'
+      }
     },
     // fontFamily:{
     //   'sans': ['Inter', 'sans-serif'],
