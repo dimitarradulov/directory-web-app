@@ -12,14 +12,7 @@
   />
 </article>
 
-<div class="flex items-center my-8 gap-4">
-  <span
-    class="font-bold dark:text-white text-body-m sm:text-heading-m"
-    [ngClass]="{ italic: font() === Font.SANS }"
-    >noun</span
-  >
-  <hr class="grow border border-secondary-91 dark:border-primary-23" />
-</div>
+<app-word-type [italic]="isItalic()" type="noun" />
 
 <div>
   <p class="text-secondary sm:text-heading-s">Meaning</p>
@@ -47,14 +40,7 @@
   </div>
 </div>
 
-<div class="flex items-center my-8 gap-4">
-  <span
-    class="font-bold dark:text-white text-body-m sm:text-heading-m"
-    [ngClass]="{ italic: font() === Font.SANS }"
-    >verb</span
-  >
-  <hr class="grow border border-secondary-91 dark:border-primary-23" />
-</div>
+<app-word-type [italic]="isItalic()" type="verb" />
 
 <p class="text-secondary sm:text-heading-s">Meaning</p>
 <ul
@@ -65,6 +51,7 @@
 <p class="text-secondary text-sm sm:text-body-m ml-5">
   “Keyboarding is the part of this job I hate the most.”
 </p>
+
 <hr
   class="my-6 sm:mt-10 sm:mb-5 border border-secondary-91 dark:border-primary-23"
 />
