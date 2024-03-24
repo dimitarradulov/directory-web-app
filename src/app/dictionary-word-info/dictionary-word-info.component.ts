@@ -9,11 +9,17 @@ import {
 import { Font } from '../models/font.model';
 import { WordTypeComponent } from '../word-type/word-type.component';
 import { WordMeaningComponent } from '../word-meaning/word-meaning.component';
+import { WordComponent } from '../word/word.component';
 
 @Component({
   selector: 'app-dictionary-word-info',
   standalone: true,
-  imports: [CommonModule, WordTypeComponent, WordMeaningComponent],
+  imports: [
+    CommonModule,
+    WordTypeComponent,
+    WordMeaningComponent,
+    WordComponent,
+  ],
   templateUrl: './dictionary-word-info.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
