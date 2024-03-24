@@ -14,43 +14,22 @@
 
 <app-word-type [italic]="isItalic()" type="noun" />
 
-<div>
-  <p class="text-secondary sm:text-heading-s">Meaning</p>
-  <ul
-    class="list-disc list-inside grid gap-3 marker:text-accent text-sm sm:text-body-m dark:text-white my-4 sm:my-10"
-  >
-    <li>(etc.) A set of keys used to operate a typewriter, computer etc.</li>
-    <li>
-      A component of many instruments including the piano, organ, and
-      harpsichord consisting of usually black and white keys that cause
-      different tones to be produced when struck.
-    </li>
-    <li>
-      A device with keys of a musical keyboard, used to control electronic
-      sound-producing devices which may be built into or separate from the
-      keyboard device.
-    </li>
-  </ul>
-
+<app-word-meaning>
   <div class="flex gap-5">
     <p class="text-secondary sm:text-heading-s">Synonyms</p>
     <a href="#" class="font-bold text-accent sm:text-heading-s"
       >electronic keyboard</a
     >
   </div>
-</div>
+</app-word-meaning>
 
 <app-word-type [italic]="isItalic()" type="verb" />
 
-<p class="text-secondary sm:text-heading-s">Meaning</p>
-<ul
-  class="list-disc list-inside grid gap-3 marker:text-accent text-sm sm:text-body-m dark:text-white mt-4 mb-3 sm:mt-7"
->
-  <li>To type on a computer keyboard.</li>
-</ul>
-<p class="text-secondary text-sm sm:text-body-m ml-5">
-  “Keyboarding is the part of this job I hate the most.”
-</p>
+<app-word-meaning>
+  <p class="text-secondary text-sm sm:text-body-m ml-5">
+    “Keyboarding is the part of this job I hate the most.”
+  </p>
+</app-word-meaning>
 
 <hr
   class="my-6 sm:mt-10 sm:mb-5 border border-secondary-91 dark:border-primary-23"
