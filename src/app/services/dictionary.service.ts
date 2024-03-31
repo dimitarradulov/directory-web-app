@@ -7,10 +7,10 @@ export class DictionaryService {
   private readonly basicUrl =
     'https://api.dictionaryapi.dev/api/v2/entries/en/';
 
-  private chosenWordSignal: WritableSignal<string> = signal<string>('');
-  chosenWord = computed(() => this.chosenWordSignal());
+  private searchTermSignal: WritableSignal<string> = signal<string>('');
+  searchTerm = computed(() => this.searchTermSignal());
 
-  setChosenWord(word: string) {
-    this.chosenWordSignal.set(word);
+  setSearchTerm(searchTerm: string) {
+    this.searchTermSignal.set(searchTerm);
   }
 }
