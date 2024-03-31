@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
+import { DictionaryService } from '../services/dictionary.service';
 
 @Component({
   selector: 'app-dictionary-search',
@@ -9,4 +11,10 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './dictionary-search.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DictionarySearchComponent {}
+export class DictionarySearchComponent {
+  private dictionaryService = inject(DictionaryService);
+
+  onSearchTermChange(searchTerm: string) {
+    this.dictionaryService.setSearchTerm(searchTerm);
+  }
+}
