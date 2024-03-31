@@ -14,7 +14,7 @@ import { DictionaryService } from '../services/dictionary.service';
 export class DictionarySearchComponent {
   private dictionaryService = inject(DictionaryService);
 
-  onSearchTermChange(searchTerm: string) {
+  onSubmit(searchTerm: string) {
     this.dictionaryService.setSearchTerm(searchTerm);
   }
 }

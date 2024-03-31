@@ -1,7 +1,10 @@
-<form class="relative" #searchFrom="ngForm">
+<form
+  class="relative"
+  #searchFrom="ngForm"
+  (ngSubmit)="onSubmit(searchFrom.form.getRawValue().searchTerm)"
+>
   <input
     ngModel
-    (ngModelChange)="onSearchTermChange($event)"
     name="searchTerm"
     #searchTerm="ngModel"
     type="text"
