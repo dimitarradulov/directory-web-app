@@ -1,37 +1,47 @@
-<app-word word="keyboard" />
+@if (dictionaryService.status() === "success") {
+  <app-word
+    [word]="dictionaryService.word()?.word!"
+    (playSoundClick)="playSound()"
+  />
 
-<app-word-type [italic]="isItalic()" type="noun" />
+  @for (type of dictionaryService.wordType(); track $index) {
+    <app-word-meaning
+      [wordType]="$any(type)"
+      [data]="dictionaryService.word()!"
+      [italic]="isItalic()"
+    />
+  }
 
-<app-word-meaning>
-  <div class="flex gap-5">
-    <p class="text-secondary sm:text-heading-s">Synonyms</p>
-    <a href="#" class="font-bold text-accent hover:underline sm:text-heading-s"
-      >electronic keyboard</a
+  <hr
+    class="my-6 sm:mt-10 sm:mb-5 border border-secondary-91 dark:border-primary-23"
+  />
+
+  <footer class="sm:flex sm:gap-5 sm:items-center mb-5 text-body-s">
+    <p class="underline text-secondary mb-2 sm:mb-0">Source</p>
+
+    <a
+      [href]="dictionaryService.word()?.sourceUrl"
+      target="_blank"
+      class="flex gap-3 mb-6 sm:mb-0 text-primary-18 dark:text-white"
+      [class.underline]="font() !== Font.MONO"
     >
+      <span>{{ dictionaryService.word()?.sourceUrl }}</span>
+      <img src="../../assets/images/icon-new-window.svg" alt="external link" />
+    </a>
+  </footer>
+} @else if (dictionaryService.status() === "loading") {
+  <div class="flex items-center justify-center dark:text-accent">
+    Loading...
   </div>
-</app-word-meaning>
-
-<app-word-type [italic]="isItalic()" type="verb" />
-
-<app-word-meaning>
-  <p class="text-secondary text-sm sm:text-body-m ml-5">
-    “Keyboarding is the part of this job I hate the most.”
-  </p>
-</app-word-meaning>
-
-<hr
-  class="my-6 sm:mt-10 sm:mb-5 border border-secondary-91 dark:border-primary-23"
-/>
-
-<footer class="sm:flex sm:gap-5 sm:items-center mb-5 text-body-s">
-  <p class="underline text-secondary mb-2 sm:mb-0">Source</p>
-
-  <a
-    href="#"
-    class="flex gap-3 mb-6 sm:mb-0 text-primary-18 dark:text-white"
-    [class.underline]="font() !== Font.MONO"
-  >
-    <span>https://en.wiktionary.org/wiki/keyboard</span>
-    <img src="../../assets/images/icon-new-window.svg" alt="external link" />
-  </a>
-</footer>
+} @else if (dictionaryService.status() === "error") {
+  <div class="text-center mt-16 sm:mt-32">
+    <p class="text-6xl mb-11">🙁</p>
+    <p class="font-bold text-heading-s text-primary-18 mb-6 dark:text-white">
+      No Definitions Found
+    </p>
+    <p class="text-body-m text-secondary">
+      Sorry pal, we couldn't find definitions for the word you were looking for.
+      You can try the search again at later time or head to the web instead.
+    </p>
+  </div>
+}

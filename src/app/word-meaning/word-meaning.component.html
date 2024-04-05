@@ -1,18 +1,33 @@
+<div class="flex items-center my-8 gap-4">
+  <span
+    class="font-bold dark:text-white text-body-m sm:text-heading-m"
+    [ngClass]="{ italic: italic() }"
+    >{{ wordType() }}</span
+  >
+  <hr class="grow border border-secondary-91 dark:border-primary-23" />
+</div>
+
 <p class="text-secondary sm:text-heading-s">Meaning</p>
 <ul
   class="list-disc list-inside grid gap-3 marker:text-accent text-sm sm:text-body-m dark:text-white my-4 sm:my-10"
 >
-  <li>(etc.) A set of keys used to operate a typewriter, computer etc.</li>
-  <li>
-    A component of many instruments including the piano, organ, and harpsichord
-    consisting of usually black and white keys that cause different tones to be
-    produced when struck.
-  </li>
-  <li>
-    A device with keys of a musical keyboard, used to control electronic
-    sound-producing devices which may be built into or separate from the
-    keyboard device.
-  </li>
+  @for (definition of data().meanings[wordType()].definitions; track $index) {
+    <li>{{ definition.definition }}</li>
+    @if (definition.example; as example) {
+      <p class="text-secondary text-sm sm:text-body-m ml-5">"{{ example }}"</p>
+    }
+  }
 </ul>
 
-<ng-content></ng-content>
+@if (data().meanings[wordType()].synonyms.length) {
+  <div class="flex flex-wrap gap-5">
+    <p class="text-secondary sm:text-heading-s">Synonyms</p>
+    @for (synonym of data().meanings[wordType()].synonyms; track $index) {
+      <a
+        href="#"
+        class="font-bold text-accent hover:underline sm:text-heading-s"
+        >{{ synonym }}</a
+      >
+    }
+  </div>
+}

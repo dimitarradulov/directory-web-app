@@ -33,7 +33,7 @@ module.exports = {
         'secondary-91': '#E9E9E9',
         'secondary-96': '#F4F4F4',
         'accent': '#A445ED',
-        'error': 'FF5252'
+        'error': '#FF5252'
       },
       fontSize: {
         'heading-l': ['64px', '77px'],
