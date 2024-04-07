@@ -1,17 +1,10 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import {
-  Injectable,
-  WritableSignal,
-  computed,
-  inject,
-  signal,
-} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, computed, inject, signal } from '@angular/core';
 import { connect } from 'ngxtension/connect';
-import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, switchMap, map, catchError, startWith } from 'rxjs/operators';
-import { EMPTY, Observable, Subject, of } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
 
-import { Audio, Meanings, Word } from '../models/word.model';
 import { State } from '../models/state.model';
 import { mapResponseToWord } from '../utils/dictionary.util';
 

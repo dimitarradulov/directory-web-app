@@ -4,7 +4,7 @@
   (ngSubmit)="onSubmit(searchFrom.form.getRawValue().searchTerm)"
 >
   <input
-    ngModel
+    [ngModel]="dictionaryService.searchTerm()"
     name="searchTerm"
     #searchTerm="ngModel"
     type="text"

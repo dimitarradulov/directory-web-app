@@ -1,9 +1,11 @@
 <article class="flex justify-between items-center">
   <div>
     <h1 class="font-bold text-3xl mb-2 sm:text-heading-l dark:text-white">
-      {{ word() }}
+      {{ word().word }}
     </h1>
-    <h3 class="text-accent text-body-m sm:text-heading-m">/ˈkiːbɔːd/</h3>
+    <h3 class="text-accent text-body-m sm:text-heading-m">
+      {{ word().audio.text }}
+    </h3>
   </div>
   <button
     (click)="playSoundClick.emit()"

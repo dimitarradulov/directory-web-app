@@ -12,7 +12,7 @@ import { DictionaryService } from '../services/dictionary.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DictionarySearchComponent {
-  private dictionaryService = inject(DictionaryService);
+  public dictionaryService = inject(DictionaryService);
 
   onSubmit(searchTerm: string) {
     this.dictionaryService.setSearchTerm(searchTerm);

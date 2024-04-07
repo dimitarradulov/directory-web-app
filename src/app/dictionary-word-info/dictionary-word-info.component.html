@@ -1,14 +1,12 @@
 @if (dictionaryService.status() === "success") {
-  <app-word
-    [word]="dictionaryService.word()?.word!"
-    (playSoundClick)="playSound()"
-  />
+  <app-word [word]="dictionaryService.word()!" (playSoundClick)="playSound()" />
 
   @for (type of dictionaryService.wordType(); track $index) {
     <app-word-meaning
       [wordType]="$any(type)"
       [data]="dictionaryService.word()!"
       [italic]="isItalic()"
+      (synonymClick)="dictionaryService.setSearchTerm($event)"
     />
   }
 

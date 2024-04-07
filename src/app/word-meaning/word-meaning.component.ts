@@ -4,6 +4,7 @@ import {
   Component,
   Input,
   input,
+  output,
 } from '@angular/core';
 
 import { Word } from '../models/word.model';
@@ -17,6 +18,7 @@ import { Word } from '../models/word.model';
 })
 export class WordMeaningComponent {
   wordType = input.required<'noun' | 'verb'>();
-  italic = input<boolean>(true);
   data = input.required<Word>();
+  italic = input<boolean>(true);
+  synonymClick = output<string>();
 }

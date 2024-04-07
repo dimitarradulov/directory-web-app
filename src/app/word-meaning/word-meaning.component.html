@@ -23,11 +23,12 @@
   <div class="flex flex-wrap gap-5">
     <p class="text-secondary sm:text-heading-s">Synonyms</p>
     @for (synonym of data().meanings[wordType()].synonyms; track $index) {
-      <a
-        href="#"
+      <button
+        (click)="synonymClick.emit(synonym)"
         class="font-bold text-accent hover:underline sm:text-heading-s"
-        >{{ synonym }}</a
       >
+        {{ synonym }}
+      </button>
     }
   </div>
 }

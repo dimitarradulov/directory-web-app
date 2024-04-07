@@ -5,6 +5,7 @@ import {
   input,
   output,
 } from '@angular/core';
+import { Word } from '../models/word.model';
 
 @Component({
   selector: 'app-word',
@@ -14,6 +15,6 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WordComponent {
-  word = input.required<string>();
+  word = input.required<Word>();
   playSoundClick = output<void>();
 }

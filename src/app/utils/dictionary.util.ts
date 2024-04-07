@@ -15,8 +15,11 @@ export function mapResponseToWord(response: any[]): Word {
     return acc;
   }, {} as Meanings);
   const audio: Audio = data.phonetics.reduce((acc: any, phonetic: any) => {
-    if (isEmpty(acc)) {
+    if (!acc.text && phonetic.text) {
       acc.text = phonetic.text;
+    }
+
+    if (!acc.fileUrl && phonetic.audio) {
       acc.fileUrl = phonetic.audio;
     }
 
@@ -31,6 +34,3 @@ export function mapResponseToWord(response: any[]): Word {
     sourceUrl,
   };
 }
-
-const isEmpty = (obj: Record<any, any>) =>
-  !Object.entries(obj || {}).length && !obj?.['length'] && !obj?.['size'];
